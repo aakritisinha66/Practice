@@ -1,4 +1,4 @@
-package com.crux;
+package com.crux.basics;
 public class HelloWorld {
 
 	public static void main(String[] args) {

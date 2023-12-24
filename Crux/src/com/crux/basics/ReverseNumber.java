@@ -1,4 +1,4 @@
-package com.crux;
+package com.crux.basics;
 
 import java.util.Scanner;
 
@@ -10,7 +10,6 @@ public class ReverseNumber {
 		while(number != 0) {
 			System.out.print(number%10);
 			number = number/10;
-			
 		}
 	}
 

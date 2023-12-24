@@ -1,4 +1,4 @@
-package com.crux;
+package com.crux.basics;
 
 import java.util.Scanner;
 
