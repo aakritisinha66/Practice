@@ -1,4 +1,4 @@
-package com.crux.excercise;
+package com.crux.excercise.fundamentals;
 
 import java.util.Scanner;
 
