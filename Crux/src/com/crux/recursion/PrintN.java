@@ -13,9 +13,9 @@ public class PrintN {
         if(n==0){  //Base case
             return;
         }
-        System.out.println(n); //5, 4, 3, 2, 1
+        System.out.println(n); //5, 4, 3, 2, 1 When Stack is building
         callRec(n-1);
-        // System.out.println(n); //1, 2, 3, 4, 5
+        System.out.println(n); //1, 2, 3, 4, 5  When Stack is falling
 
     }
     
