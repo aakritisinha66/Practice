@@ -31,3 +31,5 @@ public class NextGreaterElement {
 
 	}
 }
+
+//2, 1, 3, 8, 6, 7, 5
