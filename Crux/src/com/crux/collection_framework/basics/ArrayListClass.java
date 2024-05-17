@@ -15,15 +15,6 @@ public class ArrayListClass {
 		
 		System.out.println(list.get(1));
 		
-//		list.remove(2);
-//		System.out.println(list);
-//		
-//		list.remove(Integer.valueOf(2));
-//		System.out.println(list);
-//		
-//		list.clear();
-//		System.out.println(list);
-		
 		list.set(2, 4);
 		System.out.println(list);
 		
