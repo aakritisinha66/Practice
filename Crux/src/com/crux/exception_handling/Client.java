@@ -1,4 +1,4 @@
-package com.crux.oops.exception_handling;
+package com.crux.exception_handling;
 
 public class Client {
 

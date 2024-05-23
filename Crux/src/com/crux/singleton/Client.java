@@ -1,4 +1,4 @@
-package com.crux.oops.singleton;
+package com.crux.singleton;
 
 class LazyInitializedSingleton {
 
