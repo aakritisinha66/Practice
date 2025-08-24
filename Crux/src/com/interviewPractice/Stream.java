@@ -38,11 +38,11 @@ public class Stream {
         int pdt = numbers.stream().reduce(1, (a, b) -> a * b);
 
         List<Employee> employees = Arrays.asList(
-                new Employee(1, "Alice", "IT", 6000, 28),
-                new Employee(2, "Bob", "HR", 5000, 35),
-                new Employee(3, "Charlie", "IT", 7000, 30),
-                new Employee(4, "David", "Finance", 4000, 40),
-                new Employee(5, "Eva", "IT", 6500, 25));
+                new Employee(1, "Alice", "IT", 6000, 28, Arrays.asList("Java", "Spring", "SQL")),
+                new Employee(2, "Bob", "HR", 5000, 35, Arrays.asList("Java", "Angular", "MongoDB")),
+                new Employee(3, "Charlie", "IT", 7000, 30, Arrays.asList("AWS", "Spring", "Docker")),
+                new Employee(4, "David", "Finance", 4000, 40, Arrays.asList("C++", "Spring", "Angular")),
+                new Employee(5, "Eva", "IT", 6500, 25, Arrays.asList("Python", "NodeJS", "Docker")));
 
         //Filter Employees by Department
         List<Employee> itEmployees = employees.stream().filter(e -> e.getDepartment().equals("IT")).collect(Collectors.toList());
@@ -63,7 +63,9 @@ public class Stream {
         //Sort By Department (but sort by name if 2 emp have same dept)
         List<Employee> sortedByDept = employees.stream().sorted(Comparator.comparing(Employee::getDepartment).thenComparing(Employee::getName)).collect(Collectors.toList());
         System.out.println(sortedByDept);
-
+        //list of all Unique Skills across all Employees
+        List<String> uniqueSkils = employees.stream().flatMap(emp -> emp.getSkills().stream()).distinct().collect(Collectors.toList());
+        
         //Parallel Stream
         //Shared Mutable Data Problem   
         List<Integer> parallelResult = new ArrayList<>();
@@ -82,13 +84,15 @@ class Employee {
     private String department;
     private int salary;
     private int age;
+    private List<String> skills;
 
-    public Employee(int id, String name, String department, int salary, int age) {
-        this.id = id;
-        this.name = name;
-        this.department = department;
-        this.salary = salary;
-        this.age = age;
+    public Employee(int id, String name, String department, int salary, int age, List<String> skills) {
+            this.id = id;
+            this.name = name;
+            this.department = department;
+            this.salary = salary;
+            this.age = age;
+            this.skills = skills;
     }
 
     // Getters
@@ -110,5 +114,9 @@ class Employee {
 
     public int getAge() {
         return age;
+    }
+
+    public List<String> getSkills() {
+        return skills;
     }
 }
